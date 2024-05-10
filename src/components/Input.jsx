@@ -20,6 +20,7 @@ const Input = React.forwardRef(
       setValue(() => inputRef.current.value);
 
       inputRef.current.classList.remove('error');
+      if (props.onChange) props.onChange(inputRef.current);
     }
 
     function setInputRef(input) {
