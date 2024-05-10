@@ -1,8 +1,8 @@
+import { Box } from '@mui/material';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
-import { Box } from '@mui/material';
 import Divider from '@mui/material/Divider';
 
 function Footer() {
