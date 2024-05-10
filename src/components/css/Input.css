@@ -20,10 +20,35 @@
 
 .input_area:has(.error) {
   border-color: var(--error-color);
-}
+  background-color: color-mix(in srgb, var(--error-color) 20%, transparent 70%);
 
-.input_area:has(.error) input {
-  caret-color: var(--error-color);
+  & input {
+    caret-color: var(--error-color);
+  }
+
+  & label {
+    color: var(--error-color);
+  }
+
+  & button {
+    color: var(--error-color);
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--error-color) 10%,
+        transparent 90%
+      );
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--error-color) 20%,
+        transparent 80%
+      );
+    }
+  }
 }
 
 .input_area label {
