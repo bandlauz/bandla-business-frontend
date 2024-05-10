@@ -51,12 +51,12 @@ export default function Login() {
       />
       <div className="login_page center_con">
         <div className="login_con">
-          <h2>Log in</h2>
+          <h2>Tizimga kirish</h2>
           <hr />
-          <Input ref={usernameInput} label="Username" type="text" />
-          <Input ref={passwordInput} label="Password" type="password" />
+          <Input ref={usernameInput} label="Foydalanuvchi nomi" type="text" />
+          <Input ref={passwordInput} label="Parol" type="password" />
           <div className="login_btn" onClick={login}>
-            Log in
+            Kirish
           </div>
         </div>
       </div>
