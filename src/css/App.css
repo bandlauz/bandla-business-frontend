@@ -28,4 +28,5 @@ body,
 *[disabled] {
   opacity: 0.7 !important;
   cursor: default;
+  pointer-events: none;
 }
