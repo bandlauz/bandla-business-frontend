@@ -11,6 +11,11 @@
   margin: 0;
 }
 
+.login_con hr {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
 .login_btn {
   background-color: #354fd0;
   border-radius: 5px;
