@@ -35,6 +35,10 @@ export default function Login() {
     console.log(loginData);
   }
 
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') login();
+  }
+
   return (
     <>
       <ToastContainer
@@ -53,8 +57,18 @@ export default function Login() {
         <div className="login_con">
           <h2>Tizimga kirish</h2>
           <hr />
-          <Input ref={usernameInput} label="Foydalanuvchi nomi" type="text" />
-          <Input ref={passwordInput} label="Parol" type="password" />
+          <Input
+            ref={usernameInput}
+            label="Foydalanuvchi nomi"
+            type="text"
+            onKeyPress={handleKeyPress}
+          />
+          <Input
+            ref={passwordInput}
+            label="Parol"
+            type="password"
+            onKeyPress={handleKeyPress}
+          />
           <div className="login_btn" onClick={login}>
             Kirish
           </div>
