@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components/Input';
-import { isValidUsername } from '../../js/utils/checker';
 import './Login.css';
 
 export default function Login() {
@@ -73,4 +72,9 @@ export default function Login() {
       </div>
     </>
   );
+}
+
+function isValidUsername(username) {
+  if (!username) return false;
+  return /^[a-z]+$/.test(username);
 }
