@@ -5,7 +5,6 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/material';
 import Divider from '@mui/material/Divider';
-import './css/Footer.css';
 
 function Footer() {
   return (
