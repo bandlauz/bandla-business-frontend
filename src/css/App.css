@@ -24,3 +24,8 @@ body,
 .content-body {
   flex-grow: 1;
 }
+
+*[disabled] {
+  opacity: 0.7 !important;
+  cursor: default;
+}

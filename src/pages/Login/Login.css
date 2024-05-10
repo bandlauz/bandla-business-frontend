@@ -26,11 +26,11 @@
   margin-top: 12px;
   user-select: none;
 
-  &:hover {
+  &:not([disabled]):hover {
     background-color: #586fe0;
   }
 
-  &:active {
+  &:not([disabled]):active {
     background-color: #2d42ac;
   }
 }

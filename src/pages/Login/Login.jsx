@@ -1,42 +1,37 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Input from '../../components/Input';
 import { isValidUsername } from '../../js/utils/checker';
-import { addError } from '../../js/utils/errorInput';
 import './Login.css';
 
 export default function Login() {
   const usernameInput = useRef();
   const passwordInput = useRef();
+  const [validForm, setValidForm] = useState(false);
 
   function login() {
-    const usernameVal = usernameInput.current.value;
-    const [username, companyName] = usernameVal.split('@');
-
-    if (!isValidUsername(username) || !isValidUsername(companyName)) {
-      toast.error(`Foydalanuvchi nomi noto'g'ri`);
-      addError(usernameInput.current);
-      return;
-    }
-
-    const passwordVal = passwordInput.current.value;
-    if (!passwordVal) {
-      toast.error('Parol kiriting');
-      addError(passwordInput.current);
-      return;
-    }
-
     const loginData = {
-      username: usernameVal,
-      password: passwordVal,
+      username: usernameInput.current.value,
+      password: passwordInput.current.value,
     };
 
     console.log(loginData);
   }
 
+  function checkValidation() {
+    const passwordVal = passwordInput.current.value;
+    const [username, companyName] = usernameInput.current.value.split('@');
+
+    setValidForm(
+      isValidUsername(username) &&
+        isValidUsername(companyName) &&
+        passwordVal.length > 0
+    );
+  }
+
   function handleKeyPress(e) {
-    if (e.key === 'Enter') login();
+    if (e.key === 'Enter' && validForm) login();
   }
 
   return (
@@ -62,14 +57,16 @@ export default function Login() {
             label="Foydalanuvchi nomi"
             type="text"
             onKeyPress={handleKeyPress}
+            onChange={checkValidation}
           />
           <Input
             ref={passwordInput}
             label="Parol"
             type="password"
             onKeyPress={handleKeyPress}
+            onChange={checkValidation}
           />
-          <div className="login_btn" onClick={login}>
+          <div className="login_btn" onClick={login} disabled={!validForm}>
             Kirish
           </div>
         </div>
