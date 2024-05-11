@@ -20,12 +20,9 @@ export default function Login() {
 
   function checkValidation() {
     const passwordVal = passwordInput.current.value;
-    const [username, companyName] = usernameInput.current.value.split('@');
 
     setValidForm(
-      isValidUsername(username) &&
-        isValidUsername(companyName) &&
-        passwordVal.length > 0
+      isValidUsername(usernameInput.current.value) && passwordVal.length > 0
     );
   }
 
@@ -75,6 +72,9 @@ export default function Login() {
 }
 
 function isValidUsername(username) {
-  if (!username) return false;
-  return /^[a-z]+$/.test(username);
+  const regex = /^[a-z]+$/;
+  const [name, companyName] = username.split('@');
+
+  if (!username || !name || !companyName) return false;
+  return regex.test(name) && regex.test(companyName);
 }
