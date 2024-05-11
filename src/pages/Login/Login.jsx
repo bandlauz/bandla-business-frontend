@@ -30,6 +30,14 @@ export default function Login() {
     if (e.key === 'Enter' && validForm) login();
   }
 
+  function isValidUsername(username) {
+    const regex = /^[a-z]+$/;
+    const [name, companyName] = username.split('@');
+
+    if (!username || !name || !companyName) return false;
+    return regex.test(name) && regex.test(companyName);
+  }
+
   return (
     <>
       <ToastContainer
@@ -69,12 +77,4 @@ export default function Login() {
       </div>
     </>
   );
-}
-
-function isValidUsername(username) {
-  const regex = /^[a-z]+$/;
-  const [name, companyName] = username.split('@');
-
-  if (!username || !name || !companyName) return false;
-  return regex.test(name) && regex.test(companyName);
 }
