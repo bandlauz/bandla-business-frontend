@@ -1,0 +1,37 @@
+.login_page {
+  height: 100%;
+}
+
+.center_con {
+  display: grid;
+  place-items: center;
+}
+
+.login_con h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.login_con hr {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.login_btn {
+  background-color: #354fd0;
+  border-radius: 5px;
+  padding: 10px 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  margin-top: 12px;
+  user-select: none;
+
+  &:not([disabled]):hover {
+    background-color: #586fe0;
+  }
+
+  &:not([disabled]):active {
+    background-color: #2d42ac;
+  }
+}
