@@ -1,6 +1,8 @@
+import React from 'react';
 import Footer from './components/Footer';
-import Login from './pages/Login/Login';
 import './css/App.css';
+
+const Login = React.lazy(() => import('./pages/Login/Login'));
 
 export default function App() {
   return (

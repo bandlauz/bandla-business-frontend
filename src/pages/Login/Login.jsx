@@ -62,6 +62,7 @@ export default function Login() {
             type="text"
             onKeyPress={handleKeyPress}
             onChange={checkValidation}
+            autoFocus
           />
           <Input
             ref={passwordInput}
